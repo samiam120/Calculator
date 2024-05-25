@@ -48,8 +48,8 @@ clearButton.addEventListener("click", () => {
 });
 
 function displayAnswer() {
-  const one = parseInt(firstNumber);
-  const two = parseInt(secondNumber);
+  const one = parseFloat(firstNumber);
+  const two = parseFloat(secondNumber);
   display.textContent = operate(operator, one, two);
 }
 
@@ -66,7 +66,7 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-  return  b === 0 ? alert("ERROR CANT DIVIDE BY 0") : a / b;
+  return (a/b).toFixed(2);
 }
 
 function operate(operator, num1, num2) {
