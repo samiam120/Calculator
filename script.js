@@ -1,39 +1,57 @@
-let firstNumber = 0;
-let secondNumber = 0;
-
+let firstNumber = "";
+let secondNumber = "";
 let operator = "";
 
 const display = document.querySelector("#display");
 const operatorButton = Array.from(document.querySelectorAll(".operator"));
-clearButton = document.querySelector("#clearButton");
+const clearButton = document.querySelector("#clearButton");
 const digits = Array.from(document.querySelectorAll(".digits button"));
 const equalsButton = document.querySelector("#equalsKey");
 
 digits.forEach((btn) => {
   btn.addEventListener("click", () => {
-    display.textContent += btn.textContent;
+    if (!operator) {
+      display.textContent += btn.textContent;
+      firstNumber = display.textContent;
+    } else {
+      secondNumber += btn.textContent;
+      display.textContent = secondNumber;
+    }
   });
 });
 
 operatorButton.forEach((button) => {
   button.addEventListener("click", () => {
-    firstNumber = parseInt(display.textContent);
+    if (firstNumber && secondNumber && operator) {
+      displayAnswer();
+      firstNumber = display.textContent;
+      secondNumber = "";
+    }
     operator = button.textContent;
-    display.textContent = "";
   });
 });
 
 equalsButton.addEventListener("click", () => {
-  secondNumber = parseInt(display.textContent);
-  display.textContent = operate(operator, firstNumber, secondNumber);
+  if (firstNumber && operator && secondNumber) {
+    displayAnswer();
+    operator = "";
+    firstNumber = display.textContent;
+    secondNumber = "";
+  }
 });
 
-operator = clearButton.addEventListener("click", () => {
-  firstNumber = 0;
-  secondNumber = 0;
+clearButton.addEventListener("click", () => {
+  firstNumber = "";
+  secondNumber = "";
   operator = "";
   display.textContent = "";
 });
+
+function displayAnswer() {
+  const one = parseInt(firstNumber);
+  const two = parseInt(secondNumber);
+  display.textContent = operate(operator, one, two);
+}
 
 function add(a, b) {
   return a + b;
@@ -48,7 +66,7 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-  return a / b;
+  return  b === 0 ? alert("ERROR CANT DIVIDE BY 0") : a / b;
 }
 
 function operate(operator, num1, num2) {
