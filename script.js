@@ -66,7 +66,7 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-  return (a/b).toFixed(2);
+  return b === 0 ? display.textContent = "chill" : (a/b).toFixed(2);
 }
 
 function operate(operator, num1, num2) {
