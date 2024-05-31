@@ -28,6 +28,7 @@ operatorButton.forEach((button) => {
       secondNumber = "";
     }
     operator = button.textContent;
+
   });
 });
 

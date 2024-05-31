@@ -1,26 +1,57 @@
-body{
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
 }
 
-#calculator-container{
-    border: 1px solid black;
-    width: 500px;
-    height: 500px;
+#calculator-container {
+  border: 10px solid black;
+  width: 300px;
+  height: auto;
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#display {
+  border: 5px solid blue;
+  height: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.commandButtons {
+  display: flex;
+  flex-direction: row-reverse;
+}
+#equalsKey,
+#clearButton {
+  flex: 1;
+}
+
+.digits {
+  justify-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.split{
+    display: flex;
+    align-items: center;
+}
+button{
+  height: 50px;
+  width: calc(300px / 3);
+}
+
+.operatorButtons{
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-
-#display{
-    border: 1px solid black;
-    height: 30px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 10px;
 }

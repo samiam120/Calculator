@@ -9,28 +9,30 @@
   <body>
     <div id="calculator-container">
       <div id="display"></div>
-      <div class="digits">
-        <div id="zero"><button>0</button></div>
-        <div id="one"><button>1</button></div>
-        <div id="two"><button>2</button></div>
-        <div id="three"><button>3</button></div>
-        <div id="four"><button>4</button></div>
-        <div id="five"><button>5</button></div>
-        <div id="six"><button>6</button></div>
-        <div id="seven"><button>7</button></div>
-        <div id="eight"><button>8</button></div>
-        <div id="nine"><button>9</button></div>
+
+      <div class="commandButtons">
+        <button id="equalsKey">=</button>
+        <button id="clearButton">AC</button>
       </div>
-      <div>
-        <button class="operator">+</button>
-        <button class="operator">-</button>
-        <button class="operator">x</button>
-        <button class="operator">/</button>
-        
-      </div>
-      <div id="equalsKey"><button>=</button></div>
-      <div id="clearButton">
-        <button>clear</button>
+      <div class="split">
+        <div class="digits">
+          <div class="digit" id="zero"><button>0</button></div>
+          <div class="digit" id="one"><button>1</button></div>
+          <div class="digit" id="two"><button>2</button></div>
+          <div class="digit" id="three"><button>3</button></div>
+          <div class="digit" id="four"><button>4</button></div>
+          <div class="digit" id="five"><button>5</button></div>
+          <div class="digit" id="six"><button>6</button></div>
+          <div class="digit" id="seven"><button>7</button></div>
+          <div class="digit" id="eight"><button>8</button></div>
+          <div class="digit" id="nine"><button>9</button></div>
+        </div>
+        <div class="operatorButtons">
+          <button class="operator">+</button>
+          <button class="operator">-</button>
+          <button class="operator">x</button>
+          <button class="operator">/</button>
+        </div>
       </div>
     </div>
     <script src="script.js"></script>
